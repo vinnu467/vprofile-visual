@@ -48,9 +48,9 @@ pipeline {
             steps {
                 sshagent(credentials: ['ubuntu']) {
                     
-                    sh  "scp target/vprofile-v2.war  ubuntu@35.154.203.45:~/"
-                    sh  "ssh ubuntu@35.154.203.45 'sudo mv ~/vprofile-v2.war /var/lib/tomcat9/webapps/'"
-                    sh  "ssh ubuntu@35.254.203.45  'sudo systemctl restart tomcat9'"
+                    sh  "scp target/vprofile-v2.war  ec2-user@13.235.104.80:~/"
+                    sh  "ssh ubuntu@13.235.104.80 'sudo mv ~/vprofile-v2.war /opt/tomcat/webapps/'"
+                   
                     
                 }
             }

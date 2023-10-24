@@ -49,7 +49,7 @@ pipeline {
                 sshagent(credentials: ['awscreds']) {
                     
                     sh  "scp target/vprofile-v2.war  ec2-user@13.235.104.80:~/"
-                    sh  "ssh ubuntu@13.235.104.80 'sudo mv ~/vprofile-v2.war /opt/tomcat/webapps/'"
+                    sh  "ssh ec2-user@13.235.104.80 'sudo mv ~/vprofile-v2.war /opt/tomcat/webapps/'"
                    
                     
                 }
